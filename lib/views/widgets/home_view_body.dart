@@ -1,4 +1,5 @@
 import 'package:adaptive_ui/views/widgets/custom_sliver_grid.dart';
+import 'package:adaptive_ui/views/widgets/custom_sliver_listview.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -9,13 +10,15 @@ class HomeViewBody extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       child: CustomScrollView(
+        physics: BouncingScrollPhysics(),
         slivers: [
           SliverToBoxAdapter(
             child: SizedBox(
               height: 16,
             ),
           ),
-          CustomSliverGrid()
+          CustomSliverGrid(),
+          CustomSliverListView(),
         ],
       ),
     );
