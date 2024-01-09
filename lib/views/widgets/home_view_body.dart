@@ -7,18 +7,22 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: CustomScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         slivers: [
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 16,
             ),
           ),
-          CustomSliverGrid(),
-          CustomSliverListView(),
+          SliverToBoxAdapter(
+            child: LayoutBuilder(builder: (context, constraints) {
+              return const CustomSliverGrid();
+            }),
+          ),
+          const CustomSliverListView(),
         ],
       ),
     );
