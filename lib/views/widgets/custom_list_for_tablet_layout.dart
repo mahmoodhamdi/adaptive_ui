@@ -6,18 +6,20 @@ class CustomListForTabletLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
-      child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        itemCount: 15,
-        itemBuilder: (BuildContext context, int index) {
-          return const Padding(
-            padding: EdgeInsets.only(right: 16.0),
-            child: AspectRatio(aspectRatio: 1, child: CustomItem()),
-          );
-        },
+    return SliverToBoxAdapter(
+      child: SizedBox(
+        height: 100,
+        child: ListView.builder(
+          physics: const BouncingScrollPhysics(),
+          scrollDirection: Axis.horizontal,
+          itemCount: 15,
+          itemBuilder: (BuildContext context, int index) {
+            return const Padding(
+              padding: EdgeInsets.only(right: 16.0),
+              child: AspectRatio(aspectRatio: 1, child: CustomItem()),
+            );
+          },
+        ),
       ),
     );
   }
