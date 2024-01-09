@@ -8,15 +8,15 @@ class CustomListForTabletLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: SizedBox(
-        height: 100,
+        height: 160,
         child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
-          itemCount: 15,
+          itemCount: 150,
           itemBuilder: (BuildContext context, int index) {
             return const Padding(
               padding: EdgeInsets.only(right: 16.0),
-              child: AspectRatio(aspectRatio: 1, child: CustomItem()),
+              child: AspectRatio(aspectRatio: 1, child: CustomItem(color: Color(0xffb4b4b4),)),
             );
           },
         ),

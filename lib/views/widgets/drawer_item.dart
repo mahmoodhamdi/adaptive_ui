@@ -8,7 +8,13 @@ class DrawerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: leading,
-      title: Text(title),
+      title: Padding(
+        padding: const EdgeInsets.only(left: 16.0),
+        child: FittedBox(
+            alignment: Alignment.centerLeft,
+            fit: BoxFit.scaleDown,
+            child: Text(title)),
+      ),
     );
   }
 }

@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 class CustomItem extends StatelessWidget {
   const CustomItem({
     super.key,
+    required this.color,
   });
-
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          color: Color(0xffb4b4b4),
-          borderRadius: BorderRadius.all(Radius.circular(8))),
+      decoration: BoxDecoration(
+          color: color,
+          borderRadius: const BorderRadius.all(Radius.circular(8))),
     );
   }
 }
