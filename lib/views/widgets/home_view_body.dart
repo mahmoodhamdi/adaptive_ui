@@ -1,3 +1,4 @@
+import 'package:adaptive_ui/views/widgets/custom_list_for_tablet_layout.dart';
 import 'package:adaptive_ui/views/widgets/custom_sliver_grid.dart';
 import 'package:adaptive_ui/views/widgets/custom_sliver_listview.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,11 @@ class HomeViewBody extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: LayoutBuilder(builder: (context, constraints) {
-              return const CustomSliverGrid();
+              if (constraints.maxWidth >= 600) {
+                return const CustomListForTabletLayout();
+              } else {
+                return const CustomSliverGrid();
+              }
             }),
           ),
           const CustomSliverListView(),
